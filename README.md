@@ -1,3 +1,6 @@
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
 ## 🔷 Definición de Grupo
 
 Un **grupo** es un conjunto $G$ junto con una operación binaria
