@@ -30,13 +30,13 @@ Para todos $a, b \in \mathcal{G}$:
 $$ab = ba$$
 
 
-## ✨ Orden de un Elemento y Teorema 3.19
+## ✨ Orden de un Elemento y Teorema
 
 Se dice que $g$ tiene **orden finito** si existe un $m > 0$ tal que $g^m = 1$. En tal caso se define el **orden de $g$** como el menor número natural $m > 0$ que cumple esto, y se representa por $o(g)$. En caso contrario se dice que $g$ tiene **orden infinito**, y se representa por $o(g) = \infty$.
 
 ---
 
-### Teorema 3.19
+### Teorema
 
 Sea $g$ un elemento de un grupo. Entonces:
 
