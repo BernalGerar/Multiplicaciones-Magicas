@@ -42,3 +42,25 @@ Sea $g$ un elemento de un grupo. Entonces:
 
 1.  Si $o(g) = d$, entonces $g^m = g^n$ si y sólo si $m \equiv n \pmod d$. En particular, $g^m = 1$ si y sólo si $d \mid m$.
 2.  Si $o(g) = \infty$, entonces $g^m = g^n$ si y sólo si $m = n$.
+
+## 📜 Teorema (Orden del Elemento)
+
+Si $\mathcal{G}$ es un grupo abeliano finito y $g$ es un elemento de $\mathcal{G}$, entonces $g$ tiene orden finito y $o(g) \mid |\mathcal{G}|$.
+
+---
+
+## 📐 La Función $\varphi$ de Euler
+
+### Definición
+La **función de Euler** es la función que a cada número natural $m \ge 2$ le asigna el orden $\varphi(m)$ del grupo de unidades $U_m$ o, alternativamente, el número de números $1 \le a < m$ tales que $(a, m) = 1$. Convenimos además en que $\varphi(1) = 1$.
+
+### Propiedades y Cálculo
+
+Para calcular $\varphi(m)$, usamos las siguientes propiedades:
+
+1.  **Potencias de primos** (cuando $p$ es primo):
+    $$\varphi(p^n) = (p - 1)p^{n-1}$$
+
+2.  **Propiedad Multiplicativa:**
+    Si $(m, n) = 1$ (es decir, $m$ y $n$ son coprimos), entonces la función $\varphi$ es **multiplicativa**:
+    $$\varphi(mn) = \varphi(m)\varphi(n)$$
