@@ -1,4 +1,5 @@
-import { factorBig, divisoresBig, gcdBig, isPrimeBig, mismosPrimos } from "./factorizacion.mjs";
+import { factorBig, divisoresBig, gcdBig, mismosPrimos } from "./factorizacion.mjs";
+import { modPow } from "bigint-mod-arith";
 
 // Calcula el número de unidades del anillo Z_m, o |U_m|
 const calcularOrden = (modulo) => {
@@ -18,30 +19,28 @@ const esUnidad = (clase, modulo) => mcd(clase, modulo) === 1n
 // existen naturales n < m tales que a^n = a^m;
 // La funcion recoge los minimos n, m
 const calcularPotencia = (clase, m) => {
-    // Obtenemos los divisores del orden del grupo U_m
     m = BigInt(m);
     clase = BigInt(clase);
     if(clase % m === 0n) return 0n;
-    const divisores = divisoresBig( calcularOrden(m) );
-    let clase_ = clase % m;
     //console.log(divisores)
-    if( mismosPrimos(m, clase_) ) {
-        let cont = 1;
-        let clase__ = clase % m;
-        while(clase_ !== 0n) {
-            clase_ = ( clase__ * (clase_ % m) ) % m;
-            //console.log(cont, "-", clase_)
+    if( mismosPrimos(m, clase) ) {
+        let cont = 2;
+        let clasePow = modPow(clase, cont, m);
+        while(clasePow !== 0n) {
             cont++;
+            clasePow = modPow(clase, cont, m);
         }
         return cont;
     }
 
     if( esUnidad(clase, m) ) {
+        // Obtenemos los divisores del orden del grupo U_m
+        const divisores = divisoresBig( calcularOrden(m) );
         // Lo que hace es revisar todos los posibles divisores del orden del
         // grupo U_m, ya que en algunos de siempre un elemento de él se
         // pondra en 1
         for(let i = 0; i < divisores.length; i++) {
-            if( (clase_ ** divisores[i] ) % m === 1n) return divisores[i]
+            if( modPow(clase, divisores[i], m) === 1n) return divisores[i]
         }
 
     }else {
@@ -56,7 +55,7 @@ const calcularPotencia = (clase, m) => {
         // a^n = 1 modulo m_k, y tenemos que a^(n+k) = a^k modulo m.
         // La funcion recoge n + k, donde k < m.
         // m se reducira a 1 syss comparte con a todos sus primos.
-        let d = mcd( clase_, m_ );
+        let d = mcd( clase, m_ );
         m_ = m_ / d
         contador++;
         while( mcd( d, m_ ) !== 1n ) {
@@ -103,4 +102,5 @@ generateCombinations(arrays, (combination) => {
 //console.log( calcularOrden(900))
 //console.log( calcularPotencia(88, 880) )
 //console.log(divisoresBig(calcularOrden(88)))
+
 export { calcularPotencia, generateCombinations }

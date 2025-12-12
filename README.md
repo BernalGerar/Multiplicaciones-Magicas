@@ -62,5 +62,5 @@ Para calcular $\varphi(m)$, usamos las siguientes propiedades:
     $$\varphi(p^n) = (p - 1)p^{n-1}$$
 
 2.  **Propiedad Multiplicativa:**
-    Si $(m, n) = 1$ (es decir, $m$ y $n$ son coprimos), entonces la función $\varphi$ es **multiplicativa**:
+    Si $(m, n) = 1$ (es decir, $m$ y $n$ son coprimos), entonces la función $\varphi$ **cumple**:
     $$\varphi(mn) = \varphi(m)\varphi(n)$$

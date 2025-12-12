@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "bigint-mod-arith": "^3.3.1"
+  }
+}
