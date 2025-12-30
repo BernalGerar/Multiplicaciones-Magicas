@@ -26,7 +26,7 @@ generateCombinations(digitos, (combinacion) => {
             (N < 10n ** i)
           ) {
             const n = 10n*dig_a + dig_b
-            resultados.push({N:N, n: n, exponente: i})
+            resultados.push({N: N, n: n, m: divisor, exponente: i})
           }
     }
 })
