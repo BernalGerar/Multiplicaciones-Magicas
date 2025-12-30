@@ -116,23 +116,45 @@ x & y & m & n \\
 \end{array}
 $$
 
-### Ejemplo de resolución (Fila 21)
+### Ejemplo de resolución
 
-Ahora vamos a ver cómo podemos encontrar todas las soluciones haciendo un caso particular. Para ello, tomamos los valores de la **fila 21** de la tabla, de modo que tenemos:
-$ a = 2, \quad b = 6, \quad c = 8, \quad d = 1, \quad m = 71 $
+Para ilustrar cómo encontrar las soluciones, tomamos los valores de la 
+**fila 21** de la tabla:
+
+$$
+a = 2, \quad b = 6, \quad c = 8, \quad d = 1, \quad m = 71
+$$
 
 Sustituyendo en la igualdad y reduciendo módulo $m$, obtenemos:
-$ 18 \cdot 10^n + 10^n + 80 - 54 \equiv 0 \pmod{71} $
+
+$$
+18 \cdot 10^n + 10^n + 80 - 54 \equiv 0 \pmod{71}
+$$
 
 Lo cual se simplifica como:
-$ 19 \cdot 10^n \equiv 45 \pmod{71} $
+
+$$
+19 \cdot 10^n \equiv 45 \pmod{71}
+$$
 
 Para despejar $10^n$, calculamos el inverso modular:
-$ 10^n \equiv 19^{-1} \cdot 45 \pmod{71} $
-$ 10^n \equiv 36 \pmod{71} $
+
+$$
+10^n \equiv 19^{-1} \cdot 45 \pmod{71}
+$$
+
+$$
+10^n \equiv 36 \pmod{71}
+$$
 
 La solución mínima es $n = 6$. Calculando el orden de 10 módulo 71, obtenemos $o_{71}(10) = 35$, por lo que el conjunto de soluciones para $n$ es:
-$ 10^{6 + 35k} \equiv 36 \pmod{71} $
+
+$$
+10^{6 + 35k} \equiv 36 \pmod{71}
+$$
 
 Finalmente, la fórmula general para hallar $x$ en este grupo será:
-$ \large x = \frac{19 \cdot 10^{6 + 35k} + 26}{71} $
+
+$$
+x = \frac{19 \cdot 10^{6 + 35k} + 26}{71}
+$$
