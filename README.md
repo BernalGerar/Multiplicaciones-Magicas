@@ -158,3 +158,9 @@ Finalmente, la fórmula general para hallar $x$ en este grupo será:
 $$
 x = \frac{19 \cdot 10^{6 + 35k} + 26}{71}
 $$
+
+## Agradecimientos y Referencias
+
+Este estudio ha sido posible gracias a los conocimientos adquiridos en el libro **"Introducción a la Teoría Algebraica de Números"** de **Carlos Ivorra**. El enfoque de aritmética modular y el cálculo de órdenes para resolver este tipo de acertijos de Henry Dudeney se basan en las herramientas teóricas expuestas en dicha obra.
+
+Si encuentras algún error en la tabla o en los desarrollos, por favor abre un *issue* o contacta conmigo.
